@@ -14,9 +14,9 @@ Three synthetic input files are included.
 
 | File | Description |
 |------|-------------|
-| `fattorie.xlsx` | Synthetic farm-level dataset containing farm identifiers, geographic coordinates, company membership, and confirmation dates. |
-| `date_culling.csv` | Synthetic culling dates for infected farms. |
-| `mat_diff_basi.csv` | Synthetic pairwise genetic distance matrix between infected farms. |
+| `fattorie_synthetic.xlsx` | Synthetic farm-level dataset containing farm identifiers, geographic coordinates, company membership, and confirmation dates. |
+| `date_culling_synthetic.csv` | Synthetic culling dates for infected farms. |
+| `mat_diff_basi_synthetic.csv` | Synthetic pairwise genetic distance matrix between infected farms. |
 
 These datasets preserve the same structure, variable names, and formats as the original data but contain no real epidemiological information.
 
