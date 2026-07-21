@@ -26,7 +26,8 @@ DAYS_INFECTIOUS = 2
 
 SEEDS = list(range(100, 200))
 
-GAMMA_VALUES = [1/5, 1/10]   
+#GAMMA_VALUES = [0, 1/5, 1/10]   
+GAMMA_VALUES = [0]
 DMAX_VALUES = [1.5, 2.0]
 
 L_CONST = 1e3
@@ -50,10 +51,14 @@ n_farms = len(df_base)
 # -----------------------------
 def phi_cache_array(max_s, gamma):
     s = np.arange(max_s + 1)
-    out = gamma * np.exp(-gamma * s)
+
+    if gamma == 0:
+        out = np.ones(max_s + 1)
+    else:
+        out = gamma * np.exp(-gamma * s)
+
     out[s <= 0] = 0.0
     return out
-
 
 # -----------------------------
 # MODELLO
