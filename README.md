@@ -84,10 +84,11 @@ The estimation is repeated using multiple random initializations.
 ### Main parameters
 
 ```python
-GAMMA_VALUES = [1/5, 1/10]
+GAMMA_VALUES = [0, 1/5, 1/10]
 DMAX_VALUES = [1.5, 2.0]
 SEEDS = range(100,200)
 ```
+Note: if GAMMA_VALUES = 0 we use the constant infectiousness over time (indicator function).
 
 Additional configurable parameters include
 
