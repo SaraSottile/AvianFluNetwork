@@ -22,7 +22,7 @@ The repository is organized into three main folders:
 
 # Synthetic datasets
 
-Three synthetic input files are included.
+Three synthetic input files are included:
 
 | File | Description |
 |------|-------------|
