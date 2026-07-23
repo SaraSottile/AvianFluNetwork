@@ -17,7 +17,7 @@ FATTORIE_FILE = "fattorie.xlsx"
 
 L_CONST = 1e3
 
-GAMMA_VALUES = [1/5, 1/10]
+GAMMA_VALUES = [0, 1/5, 1/10]
 DMAX_VALUES = [1.5, 2.0]
 
 
@@ -29,9 +29,6 @@ for TARGET_GAMMA in GAMMA_VALUES:
 
     for TARGET_DMAX in DMAX_VALUES:
 
-        print(
-            f"\n===== gamma={TARGET_GAMMA}   d_max={TARGET_DMAX} ====="
-        )
 
         # -------------------------------------------------------
         # LOG
@@ -385,20 +382,22 @@ for TARGET_GAMMA in GAMMA_VALUES:
         # PHI MATRIX
         # -------------------------------------------------------
 
-        def phi_cache_array(max_s):
-
+        def phi_cache_array(max_s, gamma):
             s = np.arange(max_s + 1)
 
-            out = TARGET_GAMMA * np.exp(-TARGET_GAMMA * s)
+            if gamma == 0:
+                out = np.ones(max_s + 1)
+            else:
+                out = gamma * np.exp(-gamma * s)
 
-            out[s <= 0] = 0
-
+            out[s <= 0] = 0.0
             return out
+
 
 
         max_s = int(D_arr.max() - E_arr.min()) + 5
 
-        phi_cache = phi_cache_array(max_s)
+        phi_cache = phi_cache_array(max_s, TARGET_GAMMA)
 
         phi_matrix = np.zeros((n_inf, n_days))
 
