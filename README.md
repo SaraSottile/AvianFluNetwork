@@ -195,10 +195,11 @@ The dominant transmission mechanism is classified into four categories:
 
 ### Parameters
 
-```
+```python
 GAMMAS = [0.100, 0.200]
 DMAX_VALUES = [1.5, 2.0]
 L_CONST
+```
 
 ### Output
 
@@ -248,9 +249,10 @@ A best infector is classified as `Unmatched` when it is not identified as wildli
 
 ### Parameters
 
-```
+```python
 GAMMAS = [0.100, 0.200]
 DMAX_VALUES = [1.5, 2.0]
+```
 
 ### Output
 
@@ -294,7 +296,7 @@ The script also computes summary statistics for inferred infectors and performs 
 
 ### Parameters
 
-```
+```python
 GAMMA_VALUES
 DMAX_VALUES
 ```
@@ -368,9 +370,10 @@ The animation also shows the temporal evolution of the epidemic, including expos
 
 ### Parameters
 
-```
+```python
 TARGET_GAMMAS = [0.100, 0.200]
 DMAX_VALUES = [1.5, 2.0]
+```
 
 ### Output
 
