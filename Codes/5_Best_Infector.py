@@ -918,14 +918,6 @@ for TARGET_GAMMA in GAMMAS:
             f"dmax{TARGET_DMAX}.xlsx"
         )
 
-
-        DEBUG_FILE = (
-            f"debug_best_infector_"
-            f"gamma{TARGET_GAMMA:.3f}_"
-            f"dmax{TARGET_DMAX}.xlsx"
-        )
-
-
         with pd.ExcelWriter(
             OUT_FILE
         ) as writer:
@@ -941,36 +933,3 @@ for TARGET_GAMMA in GAMMAS:
                 sheet_name="Summary",
                 index=False
             )
-
-
-        with pd.ExcelWriter(
-            DEBUG_FILE
-        ) as writer:
-
-            debug_same_df.to_excel(
-                writer,
-                sheet_name="BestInSameCompany",
-                index=False
-            )
-
-            company_not_distance_df.to_excel(
-                writer,
-                sheet_name="CompanyNotDistance",
-                index=False
-            )
-
-            unmatched_df.to_excel(
-                writer,
-                sheet_name="Unmatched",
-                index=False
-            )
-
-
-        print("\n")
-        print(
-            f"File risultati salvato: {OUT_FILE}"
-        )
-
-        print(
-            f"File debug salvato: {DEBUG_FILE}"
-        )
